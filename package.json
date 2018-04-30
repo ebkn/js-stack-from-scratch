@@ -22,6 +22,8 @@
   },
   "scripts": {
     "start": "babel-node .",
-    "test": "eslint src && flow && jest --coverage"
+    "test": "eslint src && flow && jest --coverage",
+    "precommit": "yarn test",
+    "prepush": "yarn test"
   }
 }
