@@ -1,11 +1,14 @@
 {
-  "name": "sample",
+  "name": "ebkn-app",
   "version": "1.0.0",
   "main": "src/index.js",
   "license": "MIT",
+  "browserslist": [
+    "> 1%"
+  ],
   "scripts": {
     "start": "yarn dev:start",
-    "dev:start": "nodemon -e js,jsx --ignore lib --ignore lib --ignore dist --exec babel-node src/server",
+    "dev:start": "nodemon -e js,jsx --ignore lib --ignore dist --exec babel-node src/server",
     "dev:wds": "webpack-dev-server --progress",
     "prod:build": "rimraf lib dist && babel src -d lib --ignore .test.js && cross-env NODE_ENV=production webpack -p --progress",
     "prod:start": "cross-env NODE_ENV=production pm2 start lib/server && pm2 logs",
@@ -19,8 +22,10 @@
     "babel-eslint": "^8.2.3",
     "babel-jest": "^22.4.3",
     "babel-loader": "^7.1.4",
+    "babel-plugin-flow-react-proptypes": "^24.0.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
     "cross-env": "^5.1.4",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
@@ -42,6 +47,9 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "compression": "^1.7.2",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-hot-loader": "^4.0.0"
   }
 }
