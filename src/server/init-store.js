@@ -1,4 +1,4 @@
-// @import
+// @flow
 
 import Immutable from 'immutable'
 import { createStore, combineReducers, applyMiddleware } from 'redux'
@@ -15,8 +15,11 @@ const initStore = (plainPartialState: ?Object) => {
       .merge(Immutable.fromJS(plainPartialState.hello))
   }
 
-  return createStore(combineReducers({ hello: helloReducer }),
-    preloadedState, applyMiddleware(thunkMiddleware))
+  return createStore(
+    combineReducers({ hello: helloReducer }),
+    preloadedState,
+    applyMiddleware(thunkMiddleware),
+  )
 }
 
-  export default initStore
+export default initStore
