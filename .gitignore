@@ -4,3 +4,4 @@
 /yarn-error.log
 /dist/
 /js-stack-from-scratch/
+/.env
